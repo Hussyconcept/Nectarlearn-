@@ -1,673 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NectarLearn - Connecting Parents, Tutors, and Schools for Smarter Learning</title>
-    <meta name="description" content="Professional educational platform connecting parents with qualified tutors and empowering schools with learning solutions across Lagos, Nigeria.">
-    <meta name="keywords" content="tutoring, education, tutors, parents, schools, learning, Lagos, Nigeria, online tutoring, home tutoring">
-    <meta name="author" content="NectarLearn">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nectarlearn.com/">
-    <meta property="og:title" content="NectarLearn - Professional Educational Platform">
-    <meta property="og:description" content="Connect with verified tutors, find teaching opportunities, and enhance school programs with NectarLearn.">
-    <meta property="og:image" content="assets/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="NectarLearn - Educational Excellence">
-    <meta property="twitter:description" content="Trusted platform connecting parents, tutors, and schools for quality education.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a'
-                        },
-                        secondary: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            200: '#a7f3d0',
-                            300: '#6ee7b7',
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b'
-                        },
-                        accent: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            200: '#fed7aa',
-                            300: '#fdba74',
-                            400: '#fb923c',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f'
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'heading': ['Poppins', 'system-ui', 'sans-serif'],
-                        'display': ['DM Sans', 'system-ui', 'sans-serif']
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
-                        'fade-in': 'fadeIn 1s ease-out forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'shimmer': 'shimmer 2s linear infinite'
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NectarLearn — Practical, engaging online courses</title>
+  <meta name="description" content="NectarLearn offers practical, instructor-led courses designed to help learners build real-world skills. Explore courses, join bootcamps, and accelerate your career." />
+  <link rel="canonical" href="https://your-site.example/" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="NectarLearn — Practical, engaging online courses" />
+  <meta property="og:description" content="Build real-world skills with NectarLearn's curated courses and bootcamps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-site.example/" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Preconnect / preload fonts (if using external fonts) -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-sans text-gray-900 antialiased">
-    <!-- Navigation -->
-    <nav class="nav-professional fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-3 group">
-                        <div class="w-11 h-11 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
-                            <img src="assets/images/logo.svg" alt="NectarLearn Logo" class="w-full h-full">
-                        </div>
-                        <span class="font-heading font-bold text-xl text-gray-900 tracking-tight">NectarLearn</span>
-                    </a>
-                </div>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="index.html" class="nav-link px-4 py-2 text-primary-600 font-semibold rounded-lg">Home</a>
-                    <a href="about.html" class="nav-link px-4 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-all">About</a>
-                    <a href="#how-it-works" class="nav-link px-4 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-all">How It Works</a>
-                    <a href="#contact" class="nav-link px-4 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-all">Contact</a>
-                </div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="NectarLearn home">
+        <img src="/assets/logo.svg" alt="NectarLearn" width="140" height="36">
+      </a>
 
-                <!-- CTA Buttons -->
-                <div class="hidden md:flex items-center space-x-3">
-                    <a href="parent-form.html" class="px-5 py-2.5 text-gray-700 font-semibold hover:text-primary-600 transition-colors rounded-lg hover:bg-gray-50">
-                        Find Tutor
-                    </a>
-                    <a href="tutor-form.html" class="btn-pro btn-pro-primary">
-                        Apply as Tutor
-                    </a>
-                    <a href="school-form.html" class="btn-pro btn-pro-accent">
-                        Apply as School
-                    </a>
-                </div>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" class="mobile-menu-btn p-2.5 rounded-xl text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-all" id="mobile-menu-btn">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#bootcamps">Bootcamps</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-primary" href="/signup">Get started</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <!-- Mobile Navigation -->
-            <div class="md:hidden mobile-menu hidden border-t border-gray-100" id="mobile-menu">
-                <div class="py-4 space-y-1">
-                    <a href="index.html" class="block px-4 py-2.5 text-primary-600 font-semibold rounded-lg">Home</a>
-                    <a href="about.html" class="block px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors">About</a>
-                    <a href="#how-it-works" class="block px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors">How It Works</a>
-                    <a href="#contact" class="block px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors">Contact</a>
-                    <div class="pt-4 border-t border-gray-100 space-y-2">
-                        <a href="parent-form.html" class="block px-4 py-3 text-center bg-gray-50 text-gray-700 font-semibold rounded-xl hover:bg-gray-100 transition-colors">Find Tutor</a>
-                        <a href="tutor-form.html" class="block px-4 py-3 text-center bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors">Apply as Tutor</a>
-                        <a href="school-form.html" class="block px-4 py-3 text-center bg-secondary-600 text-white font-semibold rounded-xl hover:bg-secondary-700 transition-colors">Apply as School</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-background-enhanced gradient-mesh relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden">
-            <!-- Large Floating Orbs -->
-            <div class="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-primary-400/30 to-primary-600/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 float-slow"></div>
-            <div class="absolute top-20 right-10 w-80 h-80 bg-gradient-to-br from-secondary-400/30 to-secondary-600/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 float-medium" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-10 left-1/4 w-72 h-72 bg-gradient-to-br from-accent-400/20 to-accent-600/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style="animation-delay: 4s;"></div>
-            
-            <!-- Small Floating Particles -->
-            <div class="absolute top-1/4 left-1/3 w-3 h-3 bg-primary-400 rounded-full animate-pulse-slow opacity-60"></div>
-            <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-secondary-400 rounded-full animate-bounce-slow opacity-50"></div>
-            <div class="absolute bottom-1/3 left-1/4 w-4 h-4 bg-accent-400 rounded-full animate-pulse-slow opacity-40" style="animation-delay: 1s;"></div>
-            <div class="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-bounce-slow opacity-50" style="animation-delay: 2s;"></div>
-        </div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[80vh]">
-                <!-- Left Column: Content -->
-                <div class="space-y-8 reveal-animation opacity-0">
-                    <div class="space-y-7">
-                        <!-- Badge with Glow Effect -->
-                        <div class="inline-flex items-center px-5 py-2.5 glass-morphism rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-default">
-                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-3"></div>
-                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm font-semibold text-gray-800">Trusted by 500+ families across Lagos</span>
-                        </div>
-                        
-                        <!-- Main Heading with Gradient Animation -->
-                        <h1 class="heading-professional font-display font-black text-5xl md:text-6xl lg:text-7xl text-gray-900 leading-[1.05] tracking-tight">
-                            Connecting Parents, Tutors, and Schools for 
-                            <span class="block mt-3 gradient-text-animated">Smarter Learning</span>
-                        </h1>
-                        
-                        <!-- Subheading with Better Styling -->
-                        <p class="body-professional text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
-                            NectarLearn is a <span class="text-highlight font-semibold text-gray-900">trusted platform</span> that helps parents find qualified tutors, empowers tutors with opportunities, and enables schools to partner for impact.
-                        </p>
-                    </div>
-                    
-                    <!-- Enhanced Primary CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="parent-form.html" class="btn-pro btn-pro-primary neon-glow ripple-effect group relative z-10">
-                            <span class="relative z-10">Find a Tutor</span>
-                            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                        <a href="tutor-form.html" class="btn-pro btn-pro-secondary spotlight ripple-effect group">
-                            <span>Apply as Tutor</span>
-                            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                            </svg>
-                        </a>
-                        <a href="school-form.html" class="btn-pro btn-pro-accent neon-glow ripple-effect group relative z-10">
-                            <span class="relative z-10">Apply as School</span>
-                            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Enhanced Trust Indicators -->
-                    <div class="flex flex-wrap items-center gap-8 pt-6">
-                        <div class="flex items-center space-x-4 glass-morphism px-5 py-3 rounded-2xl hover:scale-105 transition-transform duration-300">
-                            <div class="flex -space-x-3">
-                                <div class="w-11 h-11 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-3 border-white shadow-lg hover:scale-110 transition-transform"></div>
-                                <div class="w-11 h-11 bg-gradient-to-br from-green-400 to-green-600 rounded-full border-3 border-white shadow-lg hover:scale-110 transition-transform"></div>
-                                <div class="w-11 h-11 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full border-3 border-white shadow-lg hover:scale-110 transition-transform"></div>
-                                <div class="w-11 h-11 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full border-3 border-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                    <span class="text-sm text-white font-bold">+</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-base font-bold text-gray-900">500+ students</p>
-                                <p class="text-xs text-gray-600 font-medium">served successfully</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 glass-morphism px-5 py-3 rounded-2xl hover:scale-105 transition-transform duration-300">
-                            <div class="rating-professional">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-base font-bold text-gray-900">4.9/5 rating</p>
-                                <p class="text-xs text-gray-600 font-medium">from parents</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Professional Illustration -->
-                <div class="relative fade-in-up lg:fade-in-up">
-                    <div class="relative">
-                        <!-- Main Card -->
-                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
-                            <!-- Header -->
-                            <div class="flex items-center justify-between mb-6">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-12 h-12 flex items-center justify-center">
-                                        <img src="assets/images/logo.svg" alt="NectarLearn" class="w-full h-full">
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900">NectarLearn</h3>
-                                        <p class="text-sm text-gray-500">Educational Platform</p>
-                                    </div>
-                                </div>
-                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            </div>
-
-                            <!-- Connection Visualization -->
-                            <div class="relative h-48 mb-6">
-                                <!-- Central Hub -->
-                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center shadow-lg">
-                                    <span class="text-white text-lg font-bold">NL</span>
-                                </div>
-                                
-                                <!-- Connected Nodes -->
-                                <div class="absolute top-4 left-4 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center shadow-md">
-                                    <span class="text-lg">👨‍👩‍👧‍👦</span>
-                                </div>
-                                <div class="absolute top-4 right-4 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center shadow-md">
-                                    <span class="text-lg">👨‍🏫</span>
-                                </div>
-                                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center shadow-md">
-                                    <span class="text-lg">🏫</span>
-                                </div>
-                                
-                                <!-- Connection Lines -->
-                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
-                                    <defs>
-                                        <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.6" />
-                                            <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.6" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M40 40 L100 100 M160 40 L100 100 M100 160 L100 100" stroke="url(#connectionGradient)" stroke-width="3" stroke-dasharray="8,4" fill="none" opacity="0.8">
-                                        <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
-                                    </path>
-                                </svg>
-                            </div>
-
-                            <!-- Stats -->
-                            <div class="grid grid-cols-3 gap-4 text-center">
-                                <div>
-                                    <div class="text-2xl font-bold text-primary-600">500+</div>
-                                    <div class="text-xs text-gray-500">Students</div>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-secondary-600">100+</div>
-                                    <div class="text-xs text-gray-500">Tutors</div>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-accent-600">50+</div>
-                                    <div class="text-xs text-gray-500">Schools</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Success Badge -->
-                        <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce">
-                            98% Success Rate
-                        </div>
-
-                        <!-- Floating Verification Badge -->
-                        <div class="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                            ✓ Verified Platform
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main id="main" class="site-main" role="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Learn practical skills. Ship real projects.</h1>
+        <p class="hero-sub">Interactive, project-based courses taught by industry practitioners.</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="/courses">Browse courses</a>
+          <a class="btn btn-ghost" href="/about">Learn more</a>
+        </p>
+      </div>
     </section>
 
-    <!-- User Segmentation Section -->
-    <section class="py-20 md:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-header-professional fade-in-up">
-                <h2 class="section-title-professional">
-                    Who NectarLearn Is For
-                </h2>
-                <p class="section-subtitle-professional">
-                    Tailored solutions for every stakeholder in the education ecosystem
-                </p>
-            </div>
+    <section id="courses" class="features container">
+      <h2 class="section-title">Popular courses</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <img class="card-img" src="/assets/course-web-dev.jpg" alt="Web development course" loading="lazy" width="800" height="450">
+          <div class="card-body">
+            <h3>Full-Stack Web Development</h3>
+            <p>Build real web apps with JavaScript, Node, and React.</p>
+            <a class="btn btn-outline" href="/courses/web-dev">View course</a>
+          </div>
+        </article>
 
-            <div class="card-grid-professional">
-                <!-- Parents Card -->
-                <div class="card-enhanced group">
-                    <div class="icon-container-pro blue mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="subheading-professional text-center text-2xl text-gray-900 mb-3">Parents</h3>
-                    <p class="body-professional text-center">Find trusted tutors tailored to your child's learning needs with verified credentials and proven track records.</p>
-                    <div class="mt-6 text-center">
-                        <a href="parent-form.html" class="text-primary-600 font-semibold hover:text-primary-700 inline-flex items-center group-hover:gap-2 transition-all">
-                            Get Started
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+        <article class="card">
+          <img class="card-img" src="/assets/course-data.jpg" alt="Data science course" loading="lazy" width="800" height="450">
+          <div class="card-body">
+            <h3>Data Science & ML</h3>
+            <p>Hands-on projects using Python, pandas, and scikit-learn.</p>
+            <a class="btn btn-outline" href="/courses/data-science">View course</a>
+          </div>
+        </article>
 
-                <!-- Tutors Card -->
-                <div class="card-enhanced group">
-                    <div class="icon-container-pro green mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <h3 class="subheading-professional text-center text-2xl text-gray-900 mb-3">Tutors</h3>
-                    <p class="body-professional text-center">Access flexible teaching opportunities and grow your impact while earning competitive compensation.</p>
-                    <div class="mt-6 text-center">
-                        <a href="tutor-form.html" class="text-secondary-600 font-semibold hover:text-secondary-700 inline-flex items-center group-hover:gap-2 transition-all">
-                            Join Now
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Schools Card -->
-                <div class="card-enhanced group">
-                    <div class="icon-container-pro orange mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="subheading-professional text-center text-2xl text-gray-900 mb-3">Schools</h3>
-                    <p class="body-professional text-center">Partner with NectarLearn to expand learning solutions and enhance educational outcomes for your students.</p>
-                    <div class="mt-6 text-center">
-                        <a href="school-form.html" class="text-accent-600 font-semibold hover:text-accent-700 inline-flex items-center group-hover:gap-2 transition-all">
-                            Partner With Us
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <article class="card">
+          <img class="card-img" src="/assets/course-ux.jpg" alt="UX design course" loading="lazy" width="800" height="450">
+          <div class="card-body">
+            <h3>UX & Product Design</h3>
+            <p>Design user-centered products and prototypes quickly.</p>
+            <a class="btn btn-outline" href="/courses/ux">View course</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
-                    Why Choose NectarLearn
-                </h2>
-            </div>
+    <section id="contact" class="contact container">
+      <h2 class="section-title">Get in touch</h2>
+      <form class="contact-form" action="/api/contact" method="post" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Vetted Tutors -->
-                <div class="text-center fade-in-up">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Vetted and Qualified Tutors</h3>
-                    <p class="text-gray-600 text-sm">All tutors undergo thorough background checks and credential verification.</p>
-                </div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
 
-                <!-- Simple Process -->
-                <div class="text-center fade-in-up">
-                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Simple Request and Matching Process</h3>
-                    <p class="text-gray-600 text-sm">Quick and easy matching system that connects you within 24-48 hours.</p>
-                </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
 
-                <!-- Flexible Learning -->
-                <div class="text-center fade-in-up">
-                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Flexible Learning Options</h3>
-                    <p class="text-gray-600 text-sm">Choose from online or in-person sessions that fit your schedule.</p>
-                </div>
-
-                <!-- Trusted Platform -->
-                <div class="text-center fade-in-up">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Trusted by Parents and Schools</h3>
-                    <p class="text-gray-600 text-sm">Join hundreds of satisfied families and educational institutions.</p>
-                </div>
-            </div>
-        </div>
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </form>
     </section>
+  </main>
 
-    <!-- How It Works Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
-                    How It Works
-                </h2>
-            </div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="brand" href="/"><img src="/assets/logo-footer.svg" alt="NectarLearn logo" width="120" height="30"></a>
+        <p class="muted">© <span id="year"></span> NectarLearn — All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:hello@nectarlearn.example">hello@nectarlearn.example</a>
+        </address>
+      </div>
+    </div>
+  </footer>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                <!-- Step 1 -->
-                <div class="text-center fade-in-up">
-                    <div class="relative mb-8">
-                        <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span class="text-2xl font-bold text-white">1</span>
-                        </div>
-                        <!-- Connection line for desktop -->
-                        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-secondary opacity-30 transform -translate-y-1/2" style="width: calc(100% - 2rem);"></div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl text-gray-900 mb-3">Submit a Request or Application</h3>
-                    <p class="text-gray-600">Tell us your learning needs or teaching expertise through our simple forms.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="text-center fade-in-up">
-                    <div class="relative mb-8">
-                        <div class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span class="text-2xl font-bold text-white">2</span>
-                        </div>
-                        <!-- Connection line for desktop -->
-                        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-secondary to-accent opacity-30 transform -translate-y-1/2" style="width: calc(100% - 2rem);"></div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl text-gray-900 mb-3">We Review and Match</h3>
-                    <p class="text-gray-600">Our team carefully reviews and connects you with the perfect match.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="text-center fade-in-up">
-                    <div class="relative mb-8">
-                        <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span class="text-2xl font-bold text-white">3</span>
-                        </div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl text-gray-900 mb-3">Learning Begins</h3>
-                    <p class="text-gray-600">Start your educational journey with confidence and support.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust & Credibility Section -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center fade-in-up">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-6">
-                        Designed to Support Quality Learning Outcomes
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-12 leading-relaxed">
-                        Built with parents, tutors, and schools in mind, NectarLearn creates meaningful connections that drive educational success across Lagos and beyond.
-                    </p>
-                    
-                    <!-- Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-                            <div class="text-gray-600 font-medium">Students Served</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-secondary mb-2">100+</div>
-                            <div class="text-gray-600 font-medium">Verified Tutors</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-accent mb-2">50+</div>
-                            <div class="text-gray-600 font-medium">School Partners</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">98%</div>
-                            <div class="text-gray-600 font-medium">Success Rate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final Call-to-Action Section -->
-    <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="fade-in-up">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6">
-                    Ready to Get Started with NectarLearn?
-                </h2>
-                <p class="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
-                    Join the community that's transforming education across Lagos
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-                    <a href="parent-form.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        Find a Tutor
-                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </a>
-                    <a href="tutor-form.html" class="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-secondary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        Apply as Tutor
-                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg>
-                    </a>
-                    <a href="school-form.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary transition-all duration-200 transform hover:-translate-y-0.5">
-                        Partner as School
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Brand -->
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="assets/images/logo.svg" alt="NectarLearn" class="w-full h-full">
-                        </div>
-                        <span class="font-heading font-bold text-xl">NectarLearn</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Connecting tutors, parents, and schools for smarter learning. Quality education made accessible for everyone.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323C5.902 8.198 7.053 7.708 8.35 7.708s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.897-.875-1.387-2.026-1.387-3.323s.49-2.448 1.297-3.323c.875-.897 2.026-1.387 3.323-1.387s2.448.49 3.323 1.297c.897.875 1.387 2.026 1.387 3.323s-.49 2.448-1.297 3.323c-.875.897-2.026 1.387-3.323 1.387z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="font-heading font-semibold text-lg mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="features.html" class="footer-link">Features</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h3 class="font-heading font-semibold text-lg mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="parent-form.html" class="footer-link">For Parents</a></li>
-                        <li><a href="tutor-form.html" class="footer-link">For Tutors</a></li>
-                        <li><a href="school-form.html" class="footer-link">For Schools</a></li>
-                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">
-                    &copy; 2025 NectarLearn. All rights reserved. | Lagos, Nigeria
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
